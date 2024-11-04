@@ -1,74 +1,97 @@
 <<<<<<< HEAD
 # nuevo-proyecto
 =======
-# Getting Started with Create React App
+Proyecto: Aplicación de Gestión de Tareas
+Descripción
+Esta aplicación permite a los usuarios registrarse, iniciar sesión y gestionar sus tareas de forma personalizada. Incluye características como cambio de idioma (inglés y español), diseño responsivo adaptable a dispositivos móviles, tablets y computadoras, así como la opción de seleccionar un color para el usuario.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Requisitos Previos
+Antes de comenzar, asegúrate de tener lo siguiente instalado en tu computadora:
 
-## Available Scripts
+Node.js - Plataforma que ejecuta JavaScript en el servidor.
+MongoDB - Base de datos que usaremos para almacenar los datos.
+Git - Herramienta para controlar las versiones del código.
+Paso a Paso para Ejecutar el Proyecto
+1. Clonar el Repositorio
+Primero, clona el repositorio de GitHub en tu computadora. Abre la terminal y ejecuta el siguiente comando:
 
-In the project directory, you can run:
+bash
+Copiar código
+git clone https://github.com/eduastorga/nuevo-proyecto.git
+Esto creará una carpeta llamada nuevo-proyecto con todos los archivos del proyecto.
 
-### `npm start`
+2. Acceder a la Carpeta del Proyecto
+Navega a la carpeta del proyecto usando el siguiente comando:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+bash
+Copiar código
+cd nuevo-proyecto
+3. Instalar Dependencias
+El proyecto está dividido en dos partes: el backend (servidor) y el frontend (interfaz de usuario).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+a) Instalar Dependencias del Backend
+Ve a la carpeta backend:
 
-### `npm test`
+bash
+Copiar código
+cd backend
+Instala las dependencias ejecutando:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copiar código
+npm install
+Configura el archivo .env:
 
-### `npm run build`
+Dentro de la carpeta backend, crea un archivo llamado .env.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Abre el archivo .env y agrega las siguientes líneas (sustituyendo <valor> por la información correspondiente):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+plaintext
+Copiar código
+MONGO_URI=mongodb://localhost:27017/nombre_de_tu_base_de_datos
+JWT_SECRET=tu_secreto_jwt
+PORT=3001
+Inicia el servidor:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+bash
+Copiar código
+npm start
+Si el servidor se ejecuta correctamente, deberías ver un mensaje como: "Server running on port 3001".
 
-### `npm run eject`
+b) Instalar Dependencias del Frontend
+Vuelve a la carpeta principal del proyecto:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copiar código
+cd ..
+Ve a la carpeta src:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copiar código
+cd src
+Instala las dependencias del frontend:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+bash
+Copiar código
+npm install
+Inicia el servidor de desarrollo del frontend:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+bash
+Copiar código
+npm start
+Esto debería abrir automáticamente la aplicación en tu navegador. Si no se abre, puedes ir a http://localhost:3000.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Registro e Ingreso en la Aplicación
+En la interfaz de la aplicación, selecciona "Registrarse" y completa los campos de nombre de usuario, contraseña y elige un color.
+Una vez registrado, inicia sesión para acceder al tablero de tareas.
+5. Funcionalidades Principales
+Cambio de Idioma: Puedes cambiar entre inglés y español usando el menú de idioma en la esquina superior.
+Gestión de Tareas: Agrega, edita y marca tareas como completadas.
+Diseño Adaptativo: Prueba a cambiar el tamaño de la ventana para ver cómo la interfaz se adapta a móvil, tablet y escritorio.
+6. Verificar el Almacenamiento Local
+En el navegador, abre las herramientas de desarrollo (clic derecho > "Inspeccionar" o presiona F12).
+Ve a la pestaña Application > Local Storage y selecciona localhost.
+Aquí podrás ver los datos almacenados del usuario, como el nombre y el idioma preferido.
+7. Finalizar
+Para detener los servidores, vuelve a la terminal y presiona Ctrl + C.
 >>>>>>> c85c14bf (Primer commit - Primer Avance)
