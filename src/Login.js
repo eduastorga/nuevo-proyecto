@@ -1,9 +1,10 @@
+// src/Login.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const Login = ({ setIsLoggedIn }) => {
+const Login = ({ setIsLoggedIn, translations }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
@@ -15,20 +16,24 @@ const Login = ({ setIsLoggedIn }) => {
         username,
         password,
       });
-      setMessage('¡Inicio de sesión exitoso!');
-      localStorage.setItem('token', response.data.token); // Guardar el token en localStorage
-      setIsLoggedIn(true); // Cambiar el estado a "logeado"
-      navigate('/task-board'); // Redirigir al tablero de tareas
+
+      const { token, color } = response.data;
+      setMessage(translations.loginSuccess);
+      localStorage.setItem('token', token);
+      localStorage.setItem('username', username);
+      localStorage.setItem('color', color); // Guardar el color en Local Storage
+      setIsLoggedIn(true);
+      navigate('/task-board');
     } catch (error) {
-      setMessage('Error al iniciar sesión. Verifica tus credenciales.');
+      setMessage(translations.loginError);
     }
   };
 
   return (
     <div className="container mt-5">
-      <h1>Iniciar Sesión</h1>
+      <h1>{translations.login}</h1>
       <div className="mb-3">
-        <label className="form-label">Nombre de Usuario</label>
+        <label className="form-label">{translations.username}</label>
         <input
           type="text"
           className="form-control"
@@ -37,7 +42,7 @@ const Login = ({ setIsLoggedIn }) => {
         />
       </div>
       <div className="mb-3">
-        <label className="form-label">Contraseña</label>
+        <label className="form-label">{translations.password}</label>
         <input
           type="password"
           className="form-control"
@@ -46,8 +51,11 @@ const Login = ({ setIsLoggedIn }) => {
         />
       </div>
       <button className="btn btn-primary" onClick={loginUser}>
-        Iniciar Sesión
+        {translations.login}
       </button>
+      <p className="mt-3">
+        {translations.noAccount} <Link to="/register">{translations.register}</Link>
+      </p>
       {message && <p className="mt-3">{message}</p>}
     </div>
   );
