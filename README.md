@@ -24,9 +24,9 @@ Configura el archivo ".env":
 
 Dentro de la carpeta backend, crea un archivo llamado ".env".
 Abre el archivo .env y agrega las siguientes líneas, sustituyendo "<valor>" por la información correspondiente:
-MONGO_URI, que será la dirección de tu base de datos MongoDB, por ejemplo, "mongodb://localhost:27017/nombre_de_tu_base_de_datos".
-JWT_SECRET, que será una cadena secreta que usarás para firmar tokens, por ejemplo, "tu_secreto_jwt".
-PORT, que es el puerto en el que correrá el servidor backend, por ejemplo, "3001".
+MONGO_URI, que será la dirección de tu base de datos MongoDB, por ejemplo, nosotros utilizamos "mongodb://localhost:27017/nuevo-proyecto-db".
+JWT_SECRET, que será una cadena secreta que usarás para firmar tokens, por ejemplo, nosotros utilizamos "mi_secreto_super_secreto".
+PORT, que es el puerto en el que correrá el servidor backend, por ejemplo, nosotros utilizamos "3001".
 Inicia el servidor ejecutando "npm start". Si el servidor se ejecuta correctamente, deberías ver un mensaje como "Server running on port 3001".
 
 b) Instalar Dependencias del Frontend: Vuelve a la carpeta principal del proyecto usando "cd .." y luego ve a la carpeta "src", que contiene el frontend, usando el comando "cd src". Instala las dependencias del frontend ejecutando "npm install".
