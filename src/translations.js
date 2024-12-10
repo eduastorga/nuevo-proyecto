@@ -13,6 +13,10 @@ const translations = {
     welcomeUser: 'Welcome',
     newTask: 'New Task',
     addTask: 'Add Task',
+    stats: "Statistics",
+    tasks: "Task Board",
+    chat: "ChatGPT",
+    logout: "Logout",
   },
   es: {
     login: 'Iniciar Sesión',
@@ -28,6 +32,10 @@ const translations = {
     welcomeUser: 'Bienvenido',
     newTask: 'Nueva Tarea',
     addTask: 'Agregar Tarea',
+    statistics: "Estadísticas",
+    tasks: "Tablero de Tareas",
+    chat: "Chat con IA",
+    logout: "Cerrar Sesión",
   },
 };
 
